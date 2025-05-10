@@ -1,0 +1,100 @@
+:root {
+  /* Primary Colors */
+  --aw-color-primary: #6366f1; /* Indigo */
+  --aw-color-primary-light: #818cf8;
+  --aw-color-primary-dark: #4f46e5;
+  
+  /* Secondary Colors */
+  --aw-color-secondary: #8b5cf6; /* Purple */
+  --aw-color-secondary-light: #a78bfa;
+  --aw-color-secondary-dark: #7c3aed;
+  
+  /* Accent Colors */
+  --aw-color-accent: #ec4899; /* Pink */
+  --aw-color-accent-light: #f472b6;
+  --aw-color-accent-dark: #db2777;
+  
+  /* Text Colors */
+  --aw-color-text-default: #000000; /* Black for default text */
+  --aw-color-text-muted: #1a1a1a; /* Very dark gray for muted text */
+  
+  /* Background Colors */
+  --aw-color-bg: #ffffff;
+  --aw-color-bg-alt: #f9fafb;
+  
+  /* Highlight Colors */
+  --aw-color-highlight: #f3f4f6;
+  --aw-color-highlight-hover: #e5e7eb;
+  
+  /* Fonts */
+  --aw-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --aw-font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  --aw-color-text-default: #34345f; /* Keep dark text in dark mode */
+  --aw-color-text-muted: #374151;
+  --aw-color-bg: #070606;
+  --aw-color-bg-alt: #f9fafb;
+  --aw-color-highlight: #f3f4f689;
+  --aw-color-highlight-hover: #e5e7eb;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Modern gradient background */
+body {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  min-height: 100vh;
+}
+
+.dark body {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  min-height: 100vh;
+}
+
+/* Section highlights */
+.highlight-section {
+  background: var(--aw-color-highlight);
+  transition: background-color 0.3s ease;
+}
+
+.highlight-section:hover {
+  background: var(--aw-color-highlight-hover);
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Text styles */
+h1, h2, h3, h4, h5, h6 {
+  color: #000000; /* Black for headings */
+  font-weight: 600;
+}
+
+p, li, span {
+  color: #1a1a1a; /* Very dark gray for body content */
+}
+
+.text-muted {
+  color: #1a1a1a !important; /* Very dark gray for muted text */
+} 
