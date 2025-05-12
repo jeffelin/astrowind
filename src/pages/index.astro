@@ -4,16 +4,41 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 
 const metadata = {
-  title: 'Artemis — AI-Powered Development Platform',
+  title: 'Artemis',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- Alpha Logo in top right corner -->
+  <div class="fixed top-4 right-4 z-50">
+    <div class="w-12 h-12 relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black rounded-lg transform rotate-45"></div>
+      <span class="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl transform -rotate-45">α</span>
+    </div>
+  </div>
+
+  <!-- Background Decorations -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <!-- Circles -->
+    <div class="absolute w-full h-full">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 border border-gray-200 rounded-full opacity-10"></div>
+      <div class="absolute top-1/3 right-1/4 w-48 h-48 border border-gray-200 rounded-full opacity-10"></div>
+      <div class="absolute bottom-1/4 left-1/3 w-32 h-32 border border-gray-200 rounded-full opacity-10"></div>
+    </div>
+    
+    <!-- Binary Text -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 left-1/4 text-6xl font-mono text-gray-200 opacity-5">01</div>
+      <div class="absolute top-40 right-1/3 text-4xl font-mono text-gray-200 opacity-5">10</div>
+      <div class="absolute bottom-1/4 left-1/2 text-5xl font-mono text-gray-200 opacity-5">11</div>
+    </div>
+  </div>
+
   <!-- Hero Widget ******************* -->
   <div class="min-h-screen flex items-center justify-center relative">
     <!-- Decorative cursor line -->
-    <svg class="absolute bottom-0 left-0 w-full h-full pointer-events-none" style="z-index: 1;">
+    <!-- <svg class="absolute bottom-0 left-0 w-full h-full pointer-events-none" style="z-index: 1;">
       <path 
         d="M 20 1000 Q 200 800 400 700 T 800 600" 
         stroke="#000000" 
@@ -21,22 +46,22 @@ const metadata = {
         fill="none" 
         stroke-dasharray="8,8"
         class="animate-draw"
-      />
+      /> -->
       <!-- Cursor/kite shape at the end -->
-      <path 
+      <!-- <path 
         d="M 900 600 L 820 580 L 840 600 L 820 620 Z" 
         fill="#000000" 
         class="animate-pulse"
-      />
-    </svg>
+      /> -->
+    <!-- </svg> -->
 
     <Hero
       actions={[
         {
           variant: 'primary',
-          text: 'Hey Artemis!',
+          text: 'Try Artemis!',
           href: 'https://calendly.com/kjefflin/30min',
-          class: 'text-4xl px-13 py-6 mt-40 ml-40'
+          class: 'text-2xl sm:text-4xl px-1 sm:px-13 py-4 sm:py-6 mt-20 sm:mt-32 ml-10 sm:ml-0'
         },
         // { 
         //   text: 'How it Works', 
@@ -46,11 +71,11 @@ const metadata = {
       ]}
     >
       <Fragment slot="title">
-        <div class="flex items-baseline mt-20 justify-center whitespace-nowrap">
-          <span class="font-bold text-gray-800 text-7xl sm:text-8xl -mt-36">Automate</span> 
-          <span class="text-gray-300 text-7xl sm:text-8xl ml-6 -mt-32">your emails</span>
+        <div class="flex flex-col sm:flex-row items-center sm:items-baseline mt-10 sm:mt-20 justify-center whitespace-nowrap">
+          <span class="font-bold text-gray-800 text-5xl sm:text-7xl md:text-8xl -mt-20 sm:-mt-36">Automate</span> 
+          <span class="text-gray-300 text-5xl sm:text-7xl md:text-8xl sm:ml-6 -mt-16 sm:-mt-32">your emails</span>
           <!-- Email Icon -->
-          <div class="w-12 h-12 ml-4 -mt-32">
+          <div class="w-8 h-8 sm:w-12 sm:h-12 sm:ml-4 -mt-16 sm:-mt-32">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full text-gray-300">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -60,17 +85,20 @@ const metadata = {
       </Fragment>
 
       <Fragment slot="subtitle">
+        <span class="block sm:hidden">
+          <span class="font-semibold text-base sm:text-lg md:text-xl mt-8 block text-gray-600 text-center">The first end-to-end conversational AI agent that writes and sends personalized messages.</span>
+        </span>
         <span class="hidden sm:inline">
           <span class="font-semibold text-lg sm:text-xl mt-18 block text-gray-600 whitespace-nowrap text-center">The first end-to-end conversational AI agent that writes and sends personalized messages.</span>
         </span>
-        <!-- <span class="block mb-1 sm:hidden font-bold text-orange-600">Artemis: Messaging Automation Made Easy</span> -->
       </Fragment>
 
-      <Fragment slot="content">
-        <div class="flex justify-center items-center gap-10 mt-20">
-          <!-- Voice Icon -->
-          <div class="w-16 h-16">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full text-gray-800">
+      <Fragment slot="subtitle">
+        <div class="flex flex-col justify-center items-center gap-6 sm:gap-15 mt-20 sm:mt-20 mb-8 sm:mb-20">
+          <!-- Enhanced Voice Icon -->
+          <div class="w-16 h-16 sm:w-20 sm:h-20 relative group">
+            <div class="absolute inset-0 bg-gray-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full text-gray-800 transform group-hover:scale-110 transition-transform duration-300">
               <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
               <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
               <line x1="12" y1="19" x2="12" y2="22"/>
